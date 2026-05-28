@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Guide 45-90 — Transforme ton corps en 90 jours</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --orange: #FF6B35;
+  --orange-dark: #e55a2b;
+  --bg: #0a0a0f;
+  --bg-light: #12121a;
+  --bg-card: rgba(255,255,255,0.03);
+  --text: #e5e5e5;
+  --text-muted: #888;
+  --border: rgba(255,107,53,0.2);
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 0 40px;
+  background: linear-gradient(160deg, #0c0c14 0%, #12122a 50%, #0a0a18 100%);
+}
+.badge {
+  display: inline-block;
+  background: rgba(255,107,53,0.12);
+  color: var(--orange);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.hero .tagline {
+  font-size: 16px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero p {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  line-height: 1.5;
+}
+.hero-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(255,107,53,0.15);
+  margin: 20px auto;
+  display: block;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--bg-light);
+  padding: 40px 0;
+  text-align: center;
+}
+.cta-box {
+  background: rgba(255,107,53,0.06);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.cta-box h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.cta-box p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.email-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.email-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+.email-form input::placeholder { color: #666; }
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.privacy {
+  font-size: 11px;
+  color: #555;
+  margin-top: 12px;
+}
+
+/* Content Preview */
+.preview {
+  padding: 50px 0;
+}
+.preview h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  margin-bottom: 30px;
+}
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.preview-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.preview-card .num {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--orange);
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+.preview-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.preview-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* What's Inside */
+.inside {
+  background: var(--bg-light);
+  padding: 50px 0;
+}
+.inside h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  margin-bottom: 30px;
+}
+.inside-list {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.inside-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.inside-item:last-child { border-bottom: none; }
+.check {
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.inside-item div h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.inside-item div p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Social Proof */
+.proof {
+  padding: 40px 0;
+  text-align: center;
+}
+.proof h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.stat h3 {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--orange);
+}
+.stat p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Footer CTA */
+.footer-cta {
+  background: linear-gradient(160deg, #0c0c14 0%, #12122a 50%, #0a0a18 100%);
+  padding: 50px 0;
+  text-align: center;
+}
+.footer-cta h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.footer-cta p {
+  color: #aaa;
+  margin-bottom: 24px;
+}
+.price {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--orange);
+}
+.old-price {
+  font-size: 18px;
+  color: #555;
+  text-decoration: line-through;
+  margin-bottom: 16px;
+}
+.guarantee {
+  display: inline-block;
+  background: rgba(255,107,53,0.1);
+  color: var(--orange);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer p {
+  font-size: 12px;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; }
+  .email-form { flex-direction: column; }
+  .email-form input { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Guide Gratuit</div>
+    <h1>LE GUIDE<br>45-90</h1>
+    <p class="tagline">3 exercices · 4 séries · 45 minutes · 90 jours</p>
+    <p>Comment j'ai transformé mon corps en 90 jours avec seulement 45 minutes par séance — sans compléments, sans complication.</p>
+    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=800&fit=crop" alt="Fitness transformation" class="hero-img">
+  </div>
+</section>
+
+<!-- CTA Email -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Télécharge le guide gratuit</h2>
+      <p>Reçois le PDF complet de 6 pages directement dans ta boîte mail. Zéro spam, désinscription instantanée.</p>
+      <form class="email-form" onsubmit="handleSubmit(event)">
+        <input type="email" id="email" placeholder="Ton adresse email" required>
+        <button type="submit" class="btn">Recevoir le guide →</button>
+      </form>
+      <p class="privacy">🔒 Ton email est sécurisé. Pas de spam, jamais.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Preview -->
+<section class="preview">
+  <div class="container">
+    <h2>Ce que tu vas découvrir</h2>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="num">01</div>
+        <h3>Mon histoire</h3>
+        <p>Comment j'ai découvert que la consistance bat la perfection</p>
+      </div>
+      <div class="preview-card">
+        <div class="num">02</div>
+        <h3>Les 3 exercices</h3>
+        <p>Les seuls mouvements dont tu as besoin pour tout travailler</p>
+      </div>
+      <div class="preview-card">
+        <div class="num">03</div>
+        <h3>Le programme</h3>
+        <p>Ton plan sur 90 jours, 3-4 séances par semaine, 45 min max</p>
+      </div>
+      <div class="preview-card">
+        <div class="num">04</div>
+        <h3>La nutrition</h3>
+        <p>3 règles simples pour manger sans te prendre la tête</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's Inside -->
+<section class="inside">
+  <div class="container">
+    <h2>Dans ce guide, tu trouveras :</h2>
+    <div class="inside-list">
+      <div class="inside-item">
+        <span class="check">✓</span>
+        <div>
+          <h4>Programme détaillé</h4>
+          <p>Structure exacte de chaque séance de 45 minutes</p>
+        </div>
+      </div>
+      <div class="inside-item">
+        <span class="check">✓</span>
+        <div>
+          <h4>3 exercices expliqués</h4>
+          <p>Technique, reps, séries, conseils pour chaque mouvement</p>
+        </div>
+      </div>
+      <div class="inside-item">
+        <span class="check">✓</span>
+        <div>
+          <h4>Planning hebdomadaire</h4>
+          <p>Quand t'entraîner, quand récupérer, option intensive</p>
+        </div>
+      </div>
+      <div class="inside-item">
+        <span class="check">✓</span>
+        <div>
+          <h4>Guide nutrition</h4>
+          <p>Protéines, excédent calorique, eau et sommeil</p>
+        </div>
+      </div>
+      <div class="inside-item">
+        <span class="check">✓</span>
+        <div>
+          <h4>Tableau de suivi</h4>
+          <p>Suivre tes progrès semaine après semaine</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="proof">
+  <div class="container">
+    <h2>Pourquoi ça marche</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>45 min</h3>
+        <p>Par séance maximum</p>
+      </div>
+      <div class="stat">
+        <h3>3-4x</h3>
+        <p>Par semaine</p>
+      </div>
+      <div class="stat">
+        <h3>90 jours</h3>
+        <p>Pour voir des résultats</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Prêt à commencer ta transformation ?</h2>
+    <p>Télécharge le guide gratuit et rejoins ceux qui passent à l'action.</p>
+    <div class="price">GRATUIT</div>
+    <div class="guarantee">✓ PDF de 6 pages · Téléchargement instantané</div>
+    <br>
+    <button class="btn" onclick="document.getElementById('email').focus()" style="font-size:18px; padding:16px 40px;">Recevoir le guide maintenant →</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 Méthode 45-90 — "La consistance bat la perfection"</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  
+  // Option 1: Redirection directe vers le PDF (pas de capture d'email)
+  window.open('https://litter.catbox.moe/bqv1mz.pdf', '_blank');
+  
+  // Option 2: Si tu veux capturer les emails, remplace par ton service (Mailchimp, ConvertKit, etc.)
+  // Pour l'instant, on redirige directement
+  
+  alert('Merci ! Le PDF s\'ouvre dans un nouvel onglet.');
+}
+</script>
+
+</body>
+</html>

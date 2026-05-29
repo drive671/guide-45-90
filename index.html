@@ -316,16 +316,31 @@ footer p {
   </div>
 </section>
 
-<!-- CTA Email -->
+<!-- CTA Email — Utilise Formspree (voir instructions ci-dessous) -->
 <section class="cta-section">
   <div class="container">
     <div class="cta-box">
       <h2>Télécharge le guide gratuit</h2>
       <p>Reçois le PDF complet de 6 pages directement dans ta boîte mail. Zéro spam, désinscription instantanée.</p>
-      <form class="email-form" onsubmit="handleSubmit(event)">
-        <input type="email" id="email" placeholder="Ton adresse email" required>
+      
+      <!-- 
+        IMPORTANT : Remplace l'URL ci-dessous par ton endpoint Formspree
+        1. Va sur https://formspree.io/register
+        2. Crée un formulaire
+        3. Copie l'URL (ex: https://formspree.io/f/mqaaabld)
+        4. Remplace action="..." ci-dessous + supprime les commentaires
+      -->
+      <form 
+        class="email-form" 
+        action="https://formspree.io/f/mwvzydda" 
+        method="POST"
+      >
+        <input type="email" name="email" placeholder="Ton adresse email" required>
+        <!-- Redirection vers la page de téléchargement après inscription -->
+        <input type="hidden" name="_next" value="https://drive671.github.io/guide-45-90/merci.html">
         <button type="submit" class="btn">Recevoir le guide →</button>
       </form>
+      
       <p class="privacy">🔒 Ton email est sécurisé. Pas de spam, jamais.</p>
     </div>
   </div>
@@ -433,7 +448,7 @@ footer p {
     <div class="price">GRATUIT</div>
     <div class="guarantee">✓ PDF de 6 pages · Téléchargement instantané</div>
     <br>
-    <button class="btn" onclick="document.getElementById('email').focus()" style="font-size:18px; padding:16px 40px;">Recevoir le guide maintenant →</button>
+    <button class="btn" onclick="document.querySelector('input[name=email]').focus()" style="font-size:18px; padding:16px 40px;">Recevoir le guide maintenant →</button>
   </div>
 </section>
 
@@ -443,21 +458,6 @@ footer p {
     <p>© 2026 Méthode 45-90 — "La consistance bat la perfection"</p>
   </div>
 </footer>
-
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  
-  // Option 1: Redirection directe vers le PDF (pas de capture d'email)
-  window.open('https://litter.catbox.moe/bqv1mz.pdf', '_blank');
-  
-  // Option 2: Si tu veux capturer les emails, remplace par ton service (Mailchimp, ConvertKit, etc.)
-  // Pour l'instant, on redirige directement
-  
-  alert('Merci ! Le PDF s\'ouvre dans un nouvel onglet.');
-}
-</script>
 
 </body>
 </html>
